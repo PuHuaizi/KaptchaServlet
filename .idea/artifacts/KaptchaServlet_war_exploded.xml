@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="KaptchaServlet:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/KaptchaServlet_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="KaptchaServlet/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="KaptchaServlet" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="KaptchaServlet" />
+          <element id="file-copy" path="E:/开发工具/源代码/kaptcha-2.3.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
