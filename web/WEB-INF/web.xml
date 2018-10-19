@@ -7,13 +7,22 @@
         <servlet-name>helloServlet</servlet-name>
         <servlet-class>HelloServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>helloServlet</servlet-name>
         <url-pattern>/demo</url-pattern>
     </servlet-mapping>
 
-    <!--Kaptcha验证码开始 -->
+    <!-- 检查验证码是否输入正确 -->
+    <servlet>
+        <servlet-name>verifyServlet</servlet-name>
+        <servlet-class>VerifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>verifyServlet</servlet-name>
+        <url-pattern>/verifyServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Kaptcha验证码开始 -->
     <servlet>
         <servlet-name>Kaptcha</servlet-name>
         <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
@@ -53,5 +62,5 @@
         <servlet-name>Kaptcha</servlet-name>
         <url-pattern>/Kaptcha.jpg</url-pattern>
     </servlet-mapping>
-    <!--Kaptcha验证码结束 -->
+    <!-- Kaptcha验证码结束 -->
 </web-app>

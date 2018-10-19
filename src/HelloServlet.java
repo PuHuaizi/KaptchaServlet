@@ -3,6 +3,9 @@ import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * @author PuHuaizi
+ */
 public class HelloServlet extends HttpServlet {
 
     private String message;

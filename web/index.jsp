@@ -12,35 +12,36 @@
     <title>验证码测试页面</title>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
+        // 点击切换验证码
         function changeVerifyCode(code) {
-            // 点击切换验证码
-            code.src = "Kaptcha.jpg?time=" + Math.floor(Math.random()*100);
+            code.src = "Kaptcha.jpg?time=" + Math.floor(Math.random() * 100);
         }
 
         // 提交
         function doSubmit() {
             var verifyCodeValue = $("#verifyCode").val();
-            if(verifyCodeValue.replace(/\s/g,"") == "") {
+            if (verifyCodeValue.replace(/\s/g, "") == "") {
                 alert("请输入验证码");
-            }else {
-                //提交前先异步检查验证码是否输入正确
-                var verifyUrl = "${pageContext.request.contextPath}/servlet/VerifyServlet?verifyCode="+verifyCodeValue;
+            } else {
+                // 提交前先异步检查验证码是否输入正确
+                var verifyUrl = "${pageContext.request.contextPath}/verifyServlet?verifyCode=" + verifyCodeValue;
                 $.ajax({
-                    type:"GET",
-                    url:verifyUrl,
-                    success:function(returnData){
-                        if(returnData!="Y") {
+                    type: "GET",
+                    url: verifyUrl,
+                    success: function (returnData) {
+                        if (returnData != "Y") {
                             alert("请输入正确的验证码！");
-                        }else {
-                            //验证码正确，进行提交操作
+                        } else {
+                            // 验证码正确，进行提交操作
                             alert("验证码输入正确，提交表单");
                         }
                     },
-                    error:function(e){
+                    error: function (e) {
                         alert(e);
                     }
                 });
             }
+        }
     </script>
 </head>
 <body>
@@ -58,10 +59,10 @@
         </tr>
         <tr>
             <td>
-            &nbsp;
+                &nbsp;
             </td>
             <td>
-                <input type="button" value="提交" onclick="service()">
+                <input type="button" value="提交" onclick="doSubmit()">
             </td>
         </tr>
     </table>

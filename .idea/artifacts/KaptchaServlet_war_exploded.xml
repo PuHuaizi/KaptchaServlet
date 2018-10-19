@@ -8,8 +8,8 @@
           <element id="module-output" name="KaptchaServlet" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="KaptchaServlet" />
-          <element id="file-copy" path="E:/开发工具/源代码/kaptcha-2.3.jar" />
+          <element id="library" level="project" name="kaptcha-2.3.2" />
+          <element id="library" level="project" name="servlet-api" />
         </element>
       </element>
     </root>

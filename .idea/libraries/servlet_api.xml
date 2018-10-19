@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="KaptchaServlet">
+  <library name="servlet-api">
     <CLASSES>
-      <root url="jar://E:/apache-tomcat-8.5.34/lib/servlet-api.jar!/" />
+      <root url="jar://D:/Program Files/apache-tomcat-9.0.12/lib/servlet-api.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

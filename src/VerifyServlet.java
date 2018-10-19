@@ -3,6 +3,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
+import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
+
 /**
  * @author Admin
  */
@@ -20,18 +22,14 @@ public class VerifyServlet extends HttpServlet {
             String resultData;
             // 获取传过来的验证码
             String verifyCode = request.getParameter("verifyCode");
-            System.out.println("verifyCode----" + verifyCode);
+            System.out.println("verifyCode----------" + verifyCode);
             if (verifyCode == "") {
                 resultData = "N";
             } else {
                 // 获取kaptcha生成存放在session中的验证码
-                String kaptchaValue = (String) request
-                        .getSession()
-                        .getAttribute(
-                                com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
+                String kaptchaValue = (String) request.getSession().getAttribute(KAPTCHA_SESSION_KEY);
                 // 比较输入的验证码和实际生成的验证码是否相同
-                if (kaptchaValue == null || kaptchaValue == ""
-                        || !verifyCode.equalsIgnoreCase(kaptchaValue)) {
+                if (kaptchaValue == null || kaptchaValue == "" || !verifyCode.equalsIgnoreCase(kaptchaValue)) {
                     resultData = "N";
                 } else {
                     resultData = "Y";
